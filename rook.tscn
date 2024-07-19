@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgngqn3vbyxw"]
+
+[ext_resource type="Script" path="res://Rook.gd" id="1_e7g02"]
+[ext_resource type="Texture2D" uid="uid://jmxn2sejxady" path="res://chess_rook.png" id="2_gaj4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57ses"]
+size = Vector2(27, 32)
+
+[node name="Rook" type="StaticBody2D"]
+script = ExtResource("1_e7g02")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gaj4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_57ses")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvhqe7j23xp3c"]
+
+[ext_resource type="Script" path="res://Knight.gd" id="1_r6uum"]
+[ext_resource type="Texture2D" uid="uid://b76f3fyyk1j5h" path="res://chess_knight.png" id="2_3e8jh"]
+
+[sub_resource type="Curve2D" id="Curve2D_4gs6y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -650, 0, 0, 0, 0, -150, -200, 0, 0, 0, 0, 0, -100, -150, 0, 0, 0, 0, 0, -150, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcequ"]
+size = Vector2(27, 32)
+
+[node name="Knight" type="Path2D"]
+curve = SubResource("Curve2D_4gs6y")
+
+[node name="PathFollow" type="PathFollow2D" parent="."]
+position = Vector2(-650, 0)
+rotates = false
+loop = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow"]
+script = ExtResource("1_r6uum")
+
+[node name="KnightSprite" type="Sprite2D" parent="PathFollow/StaticBody2D"]
+texture = ExtResource("2_3e8jh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow/StaticBody2D"]
+shape = SubResource("RectangleShape2D_qcequ")

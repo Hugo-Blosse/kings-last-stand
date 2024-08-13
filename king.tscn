@@ -1,0 +1,79 @@
+[gd_scene load_steps=16 format=3 uid="uid://dbmi52x0t6yuf"]
+
+[ext_resource type="Script" path="res://King.gd" id="1_pw6y4"]
+[ext_resource type="Texture2D" uid="uid://b7hqxo5ndswsv" path="res://king1.png" id="2_437j0"]
+[ext_resource type="Shader" path="res://piece.gdshader" id="2_jxnq4"]
+[ext_resource type="Texture2D" uid="uid://c60loxo2cbgko" path="res://king2.png" id="3_ejoeg"]
+[ext_resource type="Texture2D" uid="uid://dcxksakva5d12" path="res://king3.png" id="4_k1ltm"]
+[ext_resource type="Texture2D" uid="uid://bap5k6tubyw2y" path="res://king4.png" id="5_leho5"]
+[ext_resource type="Texture2D" uid="uid://b74xh4tdlxycf" path="res://king5.png" id="6_gh1nx"]
+[ext_resource type="Texture2D" uid="uid://dvlwyh6ki5hh3" path="res://king6.png" id="7_oemen"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6lu0"]
+shader = ExtResource("2_jxnq4")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lcv1"]
+shader = ExtResource("2_jxnq4")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilyvs"]
+shader = ExtResource("2_jxnq4")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rx1w5"]
+shader = ExtResource("2_jxnq4")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0vib"]
+shader = ExtResource("2_jxnq4")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5smjo"]
+shader = ExtResource("2_jxnq4")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2l2m"]
+size = Vector2(24, 32)
+
+[node name="King" type="StaticBody2D"]
+process_mode = 3
+z_index = 1
+collision_layer = 15
+collision_mask = 7
+script = ExtResource("1_pw6y4")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="Sprite2D1" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_b6lu0")
+texture = ExtResource("2_437j0")
+offset = Vector2(-8, -12)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_6lcv1")
+texture = ExtResource("3_ejoeg")
+offset = Vector2(8, -12)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_ilyvs")
+texture = ExtResource("4_k1ltm")
+offset = Vector2(-8, -1.5)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_rx1w5")
+texture = ExtResource("5_leho5")
+offset = Vector2(8, -1.5)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_k0vib")
+texture = ExtResource("6_gh1nx")
+offset = Vector2(-8, 10.5)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_5smjo")
+texture = ExtResource("7_oemen")
+offset = Vector2(8, 10.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n2l2m")

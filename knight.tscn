@@ -1,30 +1,105 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvhqe7j23xp3c"]
+[gd_scene load_steps=18 format=3 uid="uid://dvhqe7j23xp3c"]
 
+[ext_resource type="Script" path="res://knight_p.gd" id="1_53ech"]
 [ext_resource type="Script" path="res://Knight.gd" id="1_r6uum"]
-[ext_resource type="Texture2D" uid="uid://b76f3fyyk1j5h" path="res://chess_knight.png" id="2_3e8jh"]
+[ext_resource type="Shader" path="res://piece.gdshader" id="2_r0838"]
+[ext_resource type="Texture2D" uid="uid://2prtcuxq1lcg" path="res://knightl1.png" id="2_ugiwp"]
+[ext_resource type="Texture2D" uid="uid://dhtpobx0pt4c8" path="res://knightl2.png" id="3_fnx5o"]
+[ext_resource type="Texture2D" uid="uid://dbdtgjm1be8" path="res://knightl3.png" id="4_it3wn"]
+[ext_resource type="Texture2D" uid="uid://dahget1ny7i2l" path="res://knightl4.png" id="5_ywuml"]
+[ext_resource type="Texture2D" uid="uid://dvgcingays435" path="res://knightl5.png" id="6_4rqsb"]
+[ext_resource type="Texture2D" uid="uid://hfetybxpjyy1" path="res://knightl6.png" id="7_u4vpk"]
 
 [sub_resource type="Curve2D" id="Curve2D_4gs6y"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -650, 0, 0, 0, 0, -150, -200, 0, 0, 0, 0, 0, -100, -150, 0, 0, 0, 0, 0, -150, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -600, 0, 0, 0, 0, -150, -130, 0, 0, 0, 0, 0, 0, -130)
 }
-point_count = 5
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcequ"]
 size = Vector2(27, 32)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dggh"]
+resource_local_to_scene = true
+shader = ExtResource("2_r0838")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_le66r"]
+resource_local_to_scene = true
+shader = ExtResource("2_r0838")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66nqc"]
+resource_local_to_scene = true
+shader = ExtResource("2_r0838")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3dq7t"]
+resource_local_to_scene = true
+shader = ExtResource("2_r0838")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdgcu"]
+resource_local_to_scene = true
+shader = ExtResource("2_r0838")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5ash"]
+resource_local_to_scene = true
+shader = ExtResource("2_r0838")
+shader_parameter/alpha = 1.0
+
 [node name="Knight" type="Path2D"]
+process_mode = 1
 curve = SubResource("Curve2D_4gs6y")
+script = ExtResource("1_53ech")
 
 [node name="PathFollow" type="PathFollow2D" parent="."]
-position = Vector2(-650, 0)
+position = Vector2(-600, 0)
 rotates = false
 loop = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="PathFollow"]
+collision_layer = 4
+collision_mask = 8
 script = ExtResource("1_r6uum")
-
-[node name="KnightSprite" type="Sprite2D" parent="PathFollow/StaticBody2D"]
-texture = ExtResource("2_3e8jh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow/StaticBody2D"]
 shape = SubResource("RectangleShape2D_qcequ")
+
+[node name="Sprite" type="Node2D" parent="PathFollow/StaticBody2D"]
+
+[node name="Sprite1" type="Sprite2D" parent="PathFollow/StaticBody2D/Sprite"]
+material = SubResource("ShaderMaterial_2dggh")
+texture = ExtResource("2_ugiwp")
+offset = Vector2(-8, -9)
+
+[node name="Sprite2" type="Sprite2D" parent="PathFollow/StaticBody2D/Sprite"]
+material = SubResource("ShaderMaterial_le66r")
+texture = ExtResource("3_fnx5o")
+offset = Vector2(8, -9)
+
+[node name="Sprite3" type="Sprite2D" parent="PathFollow/StaticBody2D/Sprite"]
+material = SubResource("ShaderMaterial_66nqc")
+texture = ExtResource("4_it3wn")
+offset = Vector2(-8, 2.5)
+
+[node name="Sprite4" type="Sprite2D" parent="PathFollow/StaticBody2D/Sprite"]
+material = SubResource("ShaderMaterial_3dq7t")
+texture = ExtResource("5_ywuml")
+offset = Vector2(8, 2.5)
+
+[node name="Sprite5" type="Sprite2D" parent="PathFollow/StaticBody2D/Sprite"]
+material = SubResource("ShaderMaterial_cdgcu")
+texture = ExtResource("6_4rqsb")
+offset = Vector2(-8, 11.5)
+
+[node name="Sprite6" type="Sprite2D" parent="PathFollow/StaticBody2D/Sprite"]
+material = SubResource("ShaderMaterial_e5ash")
+texture = ExtResource("7_u4vpk")
+offset = Vector2(8, 11.5)
+
+[node name="DestroyTimer" type="Timer" parent="PathFollow/StaticBody2D"]
+one_shot = true
+
+[connection signal="timeout" from="PathFollow/StaticBody2D/DestroyTimer" to="PathFollow/StaticBody2D" method="_on_destroy_timer_timeout"]

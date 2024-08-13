@@ -1,18 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxuxwasivsany"]
+[gd_scene load_steps=16 format=3 uid="uid://dxuxwasivsany"]
 
 [ext_resource type="Script" path="res://Bishop.gd" id="1_g0keb"]
-[ext_resource type="Texture2D" uid="uid://do4jcv7jjk32a" path="res://chess_bishop.png" id="2_34i5a"]
+[ext_resource type="Shader" path="res://piece.gdshader" id="2_drph0"]
+[ext_resource type="Texture2D" uid="uid://cemwv1t3nhprl" path="res://bishop1.png" id="2_vsed7"]
+[ext_resource type="Texture2D" uid="uid://c3ce7q4ck51j7" path="res://bishop2.png" id="3_owxw6"]
+[ext_resource type="Texture2D" uid="uid://dhg1kbv2mgch3" path="res://bishop3.png" id="4_fkgt2"]
+[ext_resource type="Texture2D" uid="uid://b1jp0w75esw7j" path="res://bishop4.png" id="5_cayu3"]
+[ext_resource type="Texture2D" uid="uid://ctgh5u4u31pwy" path="res://bishop5.png" id="6_gm8ng"]
+[ext_resource type="Texture2D" uid="uid://bdjeoib87qwcn" path="res://bishop6.png" id="7_ikuy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xycfr"]
 size = Vector2(27, 32)
 
-[node name="Bishop" type="StaticBody2D"]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("1_g0keb")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfycx"]
+resource_local_to_scene = true
+shader = ExtResource("2_drph0")
+shader_parameter/alpha = 1.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_34i5a")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mo0wo"]
+resource_local_to_scene = true
+shader = ExtResource("2_drph0")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7gbco"]
+resource_local_to_scene = true
+shader = ExtResource("2_drph0")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4e36k"]
+resource_local_to_scene = true
+shader = ExtResource("2_drph0")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_od060"]
+resource_local_to_scene = true
+shader = ExtResource("2_drph0")
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3735"]
+resource_local_to_scene = true
+shader = ExtResource("2_drph0")
+shader_parameter/alpha = 1.0
+
+[node name="Bishop" type="StaticBody2D"]
+process_mode = 1
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_g0keb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xycfr")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="Sprite2D1" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_vfycx")
+texture = ExtResource("2_vsed7")
+offset = Vector2(-8, -10)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_mo0wo")
+texture = ExtResource("3_owxw6")
+offset = Vector2(8, -10)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_7gbco")
+texture = ExtResource("4_fkgt2")
+offset = Vector2(-8, 1.5)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_4e36k")
+texture = ExtResource("5_cayu3")
+offset = Vector2(8, 1.5)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_od060")
+texture = ExtResource("6_gm8ng")
+offset = Vector2(-8, 11.5)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite"]
+material = SubResource("ShaderMaterial_j3735")
+texture = ExtResource("7_ikuy7")
+offset = Vector2(8, 11.5)
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

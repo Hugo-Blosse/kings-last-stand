@@ -86,4 +86,9 @@ offset = Vector2(8, 11.5)
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="SwapTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="SwapTimer" to="." method="_on_swap_timer_timeout"]

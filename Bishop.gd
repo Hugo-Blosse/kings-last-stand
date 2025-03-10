@@ -2,6 +2,7 @@ extends Piece
 
 
 var has_changed_position : bool = false
+var temp_dir : Vector2
 
 
 @onready var destroy_timer : Timer = $DestroyTimer
@@ -18,9 +19,10 @@ func _physics_process(delta : float) -> void:
 		collision.get_collider().destroyed()
 	destroyed_animation(delta)
 	if (abs(global_position.x) <= 180 && abs(global_position.y) <= 180) && !has_changed_position:
+		temp_dir = dir
+		dir = Vector2.ZERO
 		has_changed_position = true
-		global_position = -global_position
-		dir = -dir
+		$SwapTimer.start()
 
 
 func destroy() -> void:
@@ -38,3 +40,8 @@ func _on_destroy_timer_timeout() -> void:
 	for sprite in sprites.get_children():
 		sprite.position = Vector2(0, 0)
 		sprite.material.set("shader_parameter/alpha", 1.0)
+
+
+func _on_swap_timer_timeout() -> void:
+	global_position = -global_position
+	dir = -temp_dir

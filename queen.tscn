@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8u63hdrd14yd"]
 
 [ext_resource type="Script" path="res://Queen.gd" id="1_hxwdx"]
-[ext_resource type="Texture2D" uid="uid://dq7kkigdeycap" path="res://chess_queen.png" id="2_0qhxf"]
+[ext_resource type="Texture2D" uid="uid://dq7kkigdeycap" path="res://Art/chess_queen.png" id="2_0qhxf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqbda"]
 size = Vector2(30, 48)

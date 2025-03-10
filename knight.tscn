@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://knight_p.gd" id="1_53ech"]
 [ext_resource type="Script" path="res://Knight.gd" id="1_r6uum"]
 [ext_resource type="Shader" path="res://piece.gdshader" id="2_r0838"]
-[ext_resource type="Texture2D" uid="uid://2prtcuxq1lcg" path="res://knightl1.png" id="2_ugiwp"]
-[ext_resource type="Texture2D" uid="uid://dhtpobx0pt4c8" path="res://knightl2.png" id="3_fnx5o"]
-[ext_resource type="Texture2D" uid="uid://dbdtgjm1be8" path="res://knightl3.png" id="4_it3wn"]
-[ext_resource type="Texture2D" uid="uid://dahget1ny7i2l" path="res://knightl4.png" id="5_ywuml"]
-[ext_resource type="Texture2D" uid="uid://dvgcingays435" path="res://knightl5.png" id="6_4rqsb"]
-[ext_resource type="Texture2D" uid="uid://hfetybxpjyy1" path="res://knightl6.png" id="7_u4vpk"]
+[ext_resource type="Texture2D" uid="uid://2prtcuxq1lcg" path="res://Art/knightl1.png" id="2_ugiwp"]
+[ext_resource type="Texture2D" uid="uid://dhtpobx0pt4c8" path="res://Art/knightl2.png" id="3_fnx5o"]
+[ext_resource type="Texture2D" uid="uid://dbdtgjm1be8" path="res://Art/knightl3.png" id="4_it3wn"]
+[ext_resource type="Texture2D" uid="uid://dahget1ny7i2l" path="res://Art/knightl4.png" id="5_ywuml"]
+[ext_resource type="Texture2D" uid="uid://dvgcingays435" path="res://Art/knightl5.png" id="6_4rqsb"]
+[ext_resource type="Texture2D" uid="uid://hfetybxpjyy1" path="res://Art/knightl6.png" id="7_u4vpk"]
 
 [sub_resource type="Curve2D" id="Curve2D_4gs6y"]
 _data = {

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Bishop.gd" id="1_g0keb"]
 [ext_resource type="Shader" path="res://piece.gdshader" id="2_drph0"]
-[ext_resource type="Texture2D" uid="uid://cemwv1t3nhprl" path="res://bishop1.png" id="2_vsed7"]
-[ext_resource type="Texture2D" uid="uid://c3ce7q4ck51j7" path="res://bishop2.png" id="3_owxw6"]
-[ext_resource type="Texture2D" uid="uid://dhg1kbv2mgch3" path="res://bishop3.png" id="4_fkgt2"]
-[ext_resource type="Texture2D" uid="uid://b1jp0w75esw7j" path="res://bishop4.png" id="5_cayu3"]
-[ext_resource type="Texture2D" uid="uid://ctgh5u4u31pwy" path="res://bishop5.png" id="6_gm8ng"]
-[ext_resource type="Texture2D" uid="uid://bdjeoib87qwcn" path="res://bishop6.png" id="7_ikuy7"]
+[ext_resource type="Texture2D" uid="uid://cemwv1t3nhprl" path="res://Art/bishop1.png" id="2_vsed7"]
+[ext_resource type="Texture2D" uid="uid://c3ce7q4ck51j7" path="res://Art/bishop2.png" id="3_owxw6"]
+[ext_resource type="Texture2D" uid="uid://dhg1kbv2mgch3" path="res://Art/bishop3.png" id="4_fkgt2"]
+[ext_resource type="Texture2D" uid="uid://b1jp0w75esw7j" path="res://Art/bishop4.png" id="5_cayu3"]
+[ext_resource type="Texture2D" uid="uid://ctgh5u4u31pwy" path="res://Art/bishop5.png" id="6_gm8ng"]
+[ext_resource type="Texture2D" uid="uid://bdjeoib87qwcn" path="res://Art/bishop6.png" id="7_ikuy7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xycfr"]
 size = Vector2(27, 32)

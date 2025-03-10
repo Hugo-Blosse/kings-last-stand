@@ -73,7 +73,7 @@ func change_knight_parametrs(option : int, jump_direction : int) -> void:
 
 	for i in range(1, sprites.get_children().size() + 1):
 		var knight_sprite : Sprite2D = sprites.get_node(str("Sprite", i))
-		knight_sprite.texture = ResourceLoader.load((str("res://knight", knight_sprites.get([option, jump_direction]), i, ".png")))
+		knight_sprite.texture = ResourceLoader.load((str("res://Art/knight", knight_sprites.get([option, jump_direction]), i, ".png")))
 
 
 func destroy() -> void:

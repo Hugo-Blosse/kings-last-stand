@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Rook.gd" id="1_e7g02"]
 [ext_resource type="Shader" path="res://piece.gdshader" id="2_37wqv"]
-[ext_resource type="Texture2D" uid="uid://bf8rwa3slw4sn" path="res://rook1.png" id="2_k2ua4"]
-[ext_resource type="Texture2D" uid="uid://brw2b3ui5qluu" path="res://rook2.png" id="3_uyetn"]
-[ext_resource type="Texture2D" uid="uid://cx7rgq5g3hys1" path="res://rook3.png" id="4_cw7nv"]
-[ext_resource type="Texture2D" uid="uid://dapcfax41atcb" path="res://rook4.png" id="5_tmqqv"]
-[ext_resource type="Texture2D" uid="uid://dtlocrxhxdsdl" path="res://rook5.png" id="6_qhiwd"]
-[ext_resource type="Texture2D" uid="uid://b7mpm77ov0cld" path="res://rook6.png" id="7_srcwc"]
+[ext_resource type="Texture2D" uid="uid://bf8rwa3slw4sn" path="res://Art/rook1.png" id="2_k2ua4"]
+[ext_resource type="Texture2D" uid="uid://brw2b3ui5qluu" path="res://Art/rook2.png" id="3_uyetn"]
+[ext_resource type="Texture2D" uid="uid://cx7rgq5g3hys1" path="res://Art/rook3.png" id="4_cw7nv"]
+[ext_resource type="Texture2D" uid="uid://dapcfax41atcb" path="res://Art/rook4.png" id="5_tmqqv"]
+[ext_resource type="Texture2D" uid="uid://dtlocrxhxdsdl" path="res://Art/rook5.png" id="6_qhiwd"]
+[ext_resource type="Texture2D" uid="uid://b7mpm77ov0cld" path="res://Art/rook6.png" id="7_srcwc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57ses"]
 size = Vector2(27, 32)

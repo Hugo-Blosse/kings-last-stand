@@ -17,7 +17,7 @@ The game utilizes a top-down perspective with simple controls. The player must p
 ## Installation
 1. Clone or download this repository.
 2. Open the project in Godot.
-3. Run the scene to experience the horror game prototype.
+3. Run the scene to experience the game prototype.
 
 ## Usage
 - **WASD** to move queen piece to corresponding side.
